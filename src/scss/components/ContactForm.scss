@@ -1,0 +1,58 @@
+@use '../variables' as *;
+
+.contact-form {
+    
+}
+
+.form {
+    &__group {
+        margin-bottom: 1rem;
+    }
+
+    &__input {
+        &, 
+        &--textarea {
+            font-size: $font-size-sm;
+            font-family: $font-primary;
+            color: $text-color-contact;
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid rgba($text-color-contact, .5);
+            width: 100%;
+            display: block;
+            transition: all .2s;
+
+            &--error::placeholder {
+                color: $color-accent;
+            }
+        }
+
+
+        &:focus {
+            outline: none;
+            border-bottom: 2px solid rgba(rgba($text-color-contact, .5), .9);
+        }
+    }
+
+    &__input--error + &__label {
+        color: $color-accent;
+    }
+
+    &__label {
+        font-size: $font-size-xs;
+        font-weight: 600;
+        font-family: $font-primary;
+        color: $text-color-subtext;
+        margin-top: .7rem;
+        display: block;
+        opacity: 1;
+        transition: all .3s;
+    }
+
+    &__input:placeholder-shown + &__label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem);
+    }
+}
+

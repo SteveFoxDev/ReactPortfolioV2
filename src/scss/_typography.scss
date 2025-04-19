@@ -1,0 +1,61 @@
+@use './variables' as *;
+
+// <<< ------- HEADINGS ------- >>>
+%heading {
+    font-family: $font-display;
+    font-weight: 400;
+}
+
+.heading-1 {
+    @extend %heading;
+    font-size: 12rem;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1;
+
+    @media only screen and (max-width: $breakpoint-lg) { //900px
+        font-size: 10rem;
+    }
+
+    @media only screen and (max-width: $breakpoint-md) { //750px
+        font-size: 9rem;
+    }
+
+    @media only screen and (max-width: $breakpoint-sm) { //600px
+        font-size: 7rem;
+    }
+    @media only screen and (max-width: $breakpoint-xs) { //500px
+        font-size: 5rem;
+    }
+}
+
+.heading-2 {
+    @extend %heading;
+    font-size: 5rem;
+    font-weight: 400;
+
+    @media only screen and (max-width: $breakpoint-md) { 
+        font-size: 4rem;
+    }
+}
+
+.heading-3 {
+    @extend %heading;
+    font-size: 4rem;
+    font-weight: 300;
+
+    @media only screen and (max-width: $breakpoint-md) { 
+        font-size: 3rem;
+    }
+}
+
+.heading-4 {
+    @extend %heading;
+    font-size: 3rem;
+    font-weight: 500;
+    font-family: $font-primary;
+
+    @media only screen and (max-width: $breakpoint-md) { 
+        font-size: 2rem;
+    }
+}

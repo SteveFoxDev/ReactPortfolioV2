@@ -1,0 +1,83 @@
+@use '../variables' as *;
+
+.collapsed-nav {
+    --bar-width: 8rem;
+    --bar-height: 5px;
+    --hamburger-gap: 1.5rem;
+    --hamburger-margin: 2rem;
+    --animation-timing: .5s ease-in-out;
+    --hamburger-height: calc((3 * var(--bar-height)) + (2 * var(--hamburger-gap)));
+}
+
+.hamburger-menu {
+    --x-width: calc(var(--hamburger-height) * 1.41421356237); //multiply the hamb-height by the square root of 2 to get the length
+    display: flex;
+    flex-direction: column;
+    gap: var(--hamburger-gap);
+    width: max-content;
+    position: absolute;
+    top: var(--hamburger-margin);
+    right: var(--hamburger-margin);
+    cursor: pointer;
+    z-index: 1;
+
+    &::before,
+    &::after,
+    & input {
+        content: '';
+        width: var(--bar-width);
+        height: var(--bar-height);
+        background-color: #fff;
+        transform-origin:  center;
+        transition: all var(--animation-timing);
+    }
+
+    //if hamburger menu HAS an input that is checked, then select the before element
+    &:has(input:checked)::before {
+        rotate: -45deg;
+        width: var(--x-width);
+        translate: 0 calc(var(--hamburger-height) * .5 - var(--bar-height) / 2); //rotates on center, offset by half the height of bar
+    }
+    &:has(input:checked)::after {
+        rotate: 45deg;
+        width: var(--x-width);
+        translate: 0 calc(var(--hamburger-height) * -.5 + var(--bar-height) / 2) ;
+    }
+
+
+    input {
+        appearance: none;
+        padding: 0;
+        margin: 0;
+        outline: none; // no outline on hover (checkbox)
+        pointer-events: none;  //Makes it so you cant click on the actual checkbox that is hidden
+        &:checked {
+            opacity: 0; //hide middle bar on checked
+            width: 0;
+        }
+    }
+}
+
+.sidebar {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    translate: 100%;
+    color: #fff;
+    background-color: rgba($bg-sidebar, .99);
+    height: 100%;
+    width: 100%;
+    display: none;
+    // display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hamburger-menu:has(input:checked) + .sidebar {
+    visibility: visible;
+    translate: 0;
+    display: flex;
+    animation: slide .5s ease-in-out;
+}
+

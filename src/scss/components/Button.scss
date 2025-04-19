@@ -1,0 +1,87 @@
+@use '../variables' as *;
+
+.btn {
+  &,
+  &:link,
+  &:visited {
+    border: none; // Button element
+    cursor: pointer; // Button element
+    font-family: $font-primary;
+    font-size: $default-font-size;
+    text-decoration: none;
+    border-radius: 0;
+    transition: all 0.2s;
+    display: inline-block;
+  }
+
+  @media(hover: hover) {
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 1rem 2rem rgba(#000, 0.15);
+    }
+  }
+  
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 1rem 3rem rgba(#000, 0.2);
+  }
+
+  // <<< ----- Blue Button ----- >>>
+  &-blue,
+  &-green {
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 400;
+    padding: 1rem 2rem;
+  }
+
+  &-blue {
+    background-color: $button-blue;
+    
+    @media(hover: hover) {
+      &:hover {
+        background-color: $button-blue-dark;
+      }
+    }
+    
+  }
+
+  // <<< ----- Green Button ----- >>>
+  &-green {
+    background-color: $button-green;
+    
+    @media(hover: hover) {
+      &:hover {
+        background-color: $button-green-dark;
+      }
+    }
+    
+  }
+
+  // <<< ----- Orange Text Button ----- >>>
+  &-text {
+    &,
+    &:link,
+    &:visited {
+      background-color: transparent; // Button element
+      font-weight: 600;
+      color: $color-accent;
+      display: inline-block;
+      padding: 1.5rem;
+      border-bottom: 3px solid $color-accent;
+    }
+    
+    @media(hover: hover) {
+      &:hover {
+        background-color: $color-accent;
+        color: #fff;
+      }
+    }
+  
+    &:active {
+      background-color: $color-accent-dark;
+    }
+  }
+}
+
+

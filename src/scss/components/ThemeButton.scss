@@ -1,0 +1,54 @@
+.theme {
+  position: fixed;
+  top: 30vh;
+  right: 0;
+  width: 6rem;
+  z-index: 1;
+  cursor: pointer;
+  display: none;
+  animation: move-left .3s;
+
+  &-display {
+    display: block;
+  }
+
+  //The following 4 blocks of code are difficult to understand.
+  //In light mode, when you hover it will scale up and move into
+  //the viewport. While in light mode you click, the mode will be
+  //switched to dark and rotate, but you will be hovered. So, dark
+  //mode hover you need to rotate the image to 180deg. In dark mode
+  //you are hovered and you click, the mode switches to light mode
+  //the image rotates back to 0deg.  You are still hovered, which is
+  //why there is NOT a rotate on light mode hover.
+  //Final resting position for dark mode
+  &-dark > &-img {
+    transform: rotate(180deg);
+  }
+  //Final resting position for light mode
+  &-light > &-img {
+    transform: rotate(0);
+  }
+  @media (hover: hover) {
+    &-dark:hover > &-img,
+    &-dark:active > &-img {
+      transform: scale(2) translateX(-25%) rotate(180deg);
+    }
+  }
+
+  @media (hover: hover) {
+    &-light:hover > &-img,
+    &-light:active > &-img {
+      transform: scale(2) translateX(-25%);
+    }
+  }
+
+  &-img {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    transform-origin: center;
+    transition: all 0.2s;
+    border-radius: 50%; // Set to circle for shadow
+  }
+}

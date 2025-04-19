@@ -1,0 +1,107 @@
+@use './variables' as *;
+
+//Header and Hero layout
+.hello {
+    display: grid;
+    grid-template-rows: 7rem calc(100vh - 7rem);
+    grid-template-columns: 100%;
+}
+//Back to top Button
+.btn-to-top {
+    position: fixed;
+    bottom: 5vh;
+    right: 2vw;
+    z-index: 1;
+    padding: 1rem;
+    animation: move-left .3s;
+  }
+
+.section {
+    padding: 3rem 0;
+    display: grid;
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [content-start] repeat(8, [col-start] minmax(min-content, 15rem) [col-end]) [content-end] minmax(6rem, 1fr) [full-end];
+    transition: all .5s; //Set for the dark to light mode transition
+
+    @media only screen and (max-width: $breakpoint-xl) {
+        grid-template-columns: [full-start] minmax(3rem, 1fr) [content-start] repeat(8, [col-start] minmax(min-content, 15rem) [col-end]) [content-end] minmax(3rem, 1fr) [full-end];
+    }
+    @media only screen and (max-width: $breakpoint-md) {
+        grid-template-columns: [full-start content-start] repeat(8, [col-start] minmax(min-content, 15rem) [col-end]) [content-end full-end];
+    }
+    &-about {
+        background-color: $bg-color-primary; // Redundant but needed for dark to light mode transition
+    }
+    &-projects {
+        background-color: $bg-color-secondary;
+    }
+    &-skills {
+        background-color: $bg-color-primary; // Redundant but needed for dark to light mode transition
+    }
+    &-contact {
+        background-color: #101214;
+        color: $text-color-contact;
+    }
+
+    &__container {
+        grid-column: content-start /content-end;
+        display: grid;
+
+        //initial settings before animation
+        opacity: 0;
+        transform: translateY(10rem);
+        transition: all .6s;
+
+        //Move up on scroll animation
+        &--animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media only screen and (max-width: $breakpoint-md) { 
+            padding: 0 2rem;
+        }
+    }
+
+    &__heading {
+        margin: 2.5rem 0;
+        padding: 1.5rem 0rem;
+        justify-self: center;
+    }
+
+    &__content {
+        margin: 3rem 0;
+        width: 100%;
+        display: grid;
+
+        &--about {
+            display: grid;
+            // grid-template-columns: .7fr .3fr;
+            grid-template-columns: repeat(2, minmax(min-content, max-content));
+
+            gap: 2rem;
+            @media only screen and (max-width: $breakpoint-sm) {
+                grid-template-columns: 1fr;
+            }
+        } 
+
+        &--projects {
+            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+            gap: 3rem;
+        }
+        &--skills {
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 5rem;
+            @media only screen and (max-width: $breakpoint-md) { 
+                grid-template-columns: 1fr;
+            }
+        }
+        &--contact {
+            grid-template-columns: .6fr .4fr;
+            column-gap: 6rem;
+            @media only screen and (max-width: $breakpoint-md) {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(auto-fit, minmax(min-content, max-content));
+            }
+        }
+    }
+}

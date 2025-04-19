@@ -1,0 +1,40 @@
+// Variables
+
+//Font Variables
+$font-primary: 'Open Sans', sans-serif;
+$font-display: 'Montserrat', sans-serif;
+$default-font-size: 2rem;
+$default-font-weight: 400;
+$default-line-height: 2rem;
+$font-size-xs: 1.4rem;
+$font-size-sm: 1.8rem;
+$font-size-md: 2.5rem;
+$font-size-lg: 3.5rem;
+
+//color Variables
+$bg-color-primary: var(--color-bg-1);
+$bg-color-secondary: var(--color-bg-2);
+$bg-sidebar: #1f1f21;
+$text-color-primary: var(--color-text-1);
+$text-color-secondary: var(--color-text-2);
+$text-color-subtext: #6b6e77;
+$text-color-contact: #bfc1c4;
+
+$color-accent: #EC5800;
+$color-accent-dark: #d44f00;
+$color-accent-light: #ff6408;
+
+$button-blue: #0094ec;
+$button-blue-dark: #0085d4;
+$button-green: #34a06c;
+$button-green-dark: #2f9061;
+
+$dark-bg-button-green: #4bce97;
+
+//Media Query Breakpoints
+$breakpoint-xl: 68.75em; // 1100px / 16px (browser default) = 68.75;
+$breakpoint-lg: 56.25em; // 900px / 16px = 56.25;
+$breakpoint-md: 46.875em; // 750px / 16px = 46.875;
+$breakpoint-sm: 37.5em; // 600px / 16px = 37.5;
+$breakpoint-xs: 31.25em; // 500px / 16px = 31.25;
+

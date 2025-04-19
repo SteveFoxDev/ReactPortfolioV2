@@ -1,0 +1,94 @@
+@use '../variables' as *;
+
+.contact {
+  padding-right: 3rem;
+  color: $text-color-contact;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: start;
+
+  &__heading,
+  .heading-3 {
+    font-family: $font-primary;
+    font-weight: 500;
+  }
+
+  &__info {
+    font-size: $default-font-size;
+    font-weight: 300;
+    line-height: 3rem;
+  }
+
+  &__list {
+    &--item {
+      list-style: none;
+    }
+
+    &--item:not(:last-of-type) {
+      margin-bottom: 2rem;
+    }
+
+    &--link:link,
+    &--link:visited {
+      text-decoration: none;
+      color: currentColor;
+      font-size: $default-font-size;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      transition: all 0.2s;
+    }
+    @media(hover: hover) {
+      &--link:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    @media(hover: hover) {
+      &--link:hover > &--icon-git {
+        color: $dark-bg-button-green;
+      }
+    }
+
+    @media(hover: hover) {
+      &--link:hover > &--icon-linkedin {
+        color: $button-blue;
+      }
+    }
+
+    &--icon {
+      margin-right: 1rem;
+      font-size: $font-size-md;
+      transition: all 0.2s;
+
+      &-exlink {
+        margin-left: 1rem;
+        font-size: $default-font-size;
+      }
+    }
+
+    @media only screen and (max-width: $breakpoint-md) {
+      display: flex;
+      flex-direction: row;
+      &--item:not(:first-child) {
+        margin-left: 3rem;
+      }
+    }
+    @media only screen and (max-width: $breakpoint-xs) {
+      display: flex;
+      flex-direction: column;
+      &--item:not(:first-child) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__heading,
+  &__info,
+  &__list {
+    @media only screen and (max-width: $breakpoint-md) {
+      margin-top: 2rem;
+    }
+  }
+}

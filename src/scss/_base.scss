@@ -1,0 +1,62 @@
+@use './variables' as *;
+
+// light/dark mode color variables
+:root {
+  // light mode colors 
+  --color-bg-1: #FFF;
+  --color-bg-2: #f0f1f2;
+
+  --color-text-1: #292a2e;  
+  --color-text-2: #505258;  
+  // --color-subtext: #6b6e77; 
+}
+
+[data-theme='dark'] {
+  // dark mode colors 
+  --color-bg-1: #1f1f21;
+  --color-bg-2: #2b2b2e;
+
+  --color-text-1: #bfc1c4;  
+  --color-text-2: #a9abaf;  
+  // --color-subtext: #96999e;  
+}
+
+// Browser Styles Reset
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; // makes 1rem = 10px.... (10px/16px = .625 or 62.5%) Browser default is 16px; 
+
+  @media only screen and (max-width: $breakpoint-xl) {
+    font-size: 50%; // makes 1rem = 8px... (8px/16px = .5 or 50%;
+  }
+}
+
+body {
+  font-family: $font-primary;
+  font-size: $default-font-size;
+  font-weight: $default-font-weight;
+  line-height: $default-line-height;
+}
+
+.app-container {
+  background-color: $bg-color-primary;
+  color: $text-color-primary;
+}
+
+::selection {
+  background-color: $color-accent;
+  color: #fff;
+}
+
+
+
+
+
+

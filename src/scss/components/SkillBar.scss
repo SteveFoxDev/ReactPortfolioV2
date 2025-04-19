@@ -1,0 +1,30 @@
+@use '../variables' as *;
+.skill {
+    margin: 2rem 0;
+    &__info{
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    &__name{
+        font-weight: 600;
+    }
+    &__percentage{
+        font-weight: 600;
+    }
+    &__bar{
+        height: 1rem;
+        width: 100%;
+        position: relative;
+        background-color: #ccc;
+        border-radius: 10px;
+    }
+
+    &__progress{
+        height: 100%;
+        position: absolute;
+        background-color: #00ec58;
+        border-radius: 10px;
+    }
+}
