@@ -14,13 +14,23 @@
     display: inline-block;
   }
 
-  @media(hover: hover) {
+  //Back to top Button
+  &-to-top {
+    position: fixed;
+    bottom: 5vh;
+    right: 2vw;
+    z-index: 1;
+    padding: 1rem;
+    animation: move-left 0.3s;
+  }
+
+  @media (hover: hover) {
     &:hover {
       transform: translateY(-3px);
       box-shadow: 0 1rem 2rem rgba(#000, 0.15);
     }
   }
-  
+
   &:active {
     transform: translateY(0);
     box-shadow: 0 1rem 3rem rgba(#000, 0.2);
@@ -37,25 +47,23 @@
 
   &-blue {
     background-color: $button-blue;
-    
-    @media(hover: hover) {
+
+    @media (hover: hover) {
       &:hover {
         background-color: $button-blue-dark;
       }
     }
-    
   }
 
   // <<< ----- Green Button ----- >>>
   &-green {
     background-color: $button-green;
-    
-    @media(hover: hover) {
+
+    @media (hover: hover) {
       &:hover {
         background-color: $button-green-dark;
       }
     }
-    
   }
 
   // <<< ----- Orange Text Button ----- >>>
@@ -69,19 +77,37 @@
       display: inline-block;
       padding: 1.5rem;
       border-bottom: 3px solid $color-accent;
+      position: relative;
     }
-    
-    @media(hover: hover) {
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 3px;
+      background-color: $color-accent;
+      z-index: -1;
+      transform: scaleY(0);
+      transition: transform .2s, width .4s cubic-bezier(1,0,0,1) .2s, background-color .1s;
+    }
+
+    @media (hover: hover) {
       &:hover {
-        background-color: $color-accent;
         color: #fff;
+        // background-color: $color-accent;
+        &::before{
+          transform: scaleY(1);
+        width: 100%;
+        }
+        
+
       }
     }
-  
+
     &:active {
       background-color: $color-accent-dark;
     }
   }
 }
-
-

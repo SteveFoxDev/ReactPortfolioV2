@@ -6,6 +6,7 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Button from './components/Button';
+import Footer from './components/Footer';
 import { useTheme } from './hooks/useTheme';
 import { useShowOnScroll } from './hooks/useShowOnScroll';
 
@@ -36,6 +37,9 @@ function App() {
       <Skills />
 
       <Contact />
+
+      <Footer />
+
     </div>
   );
 }

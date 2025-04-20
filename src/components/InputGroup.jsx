@@ -1,5 +1,5 @@
 const InputGroup = ({ label, type, name, errors, register, ...props }) => {
-  const validation = { required: 'cannot be blank.' };
+  const validation = { required: 'is required.' };
   const messageValidation = {
     required: 'Message is empty, at least say Hello!',
   };

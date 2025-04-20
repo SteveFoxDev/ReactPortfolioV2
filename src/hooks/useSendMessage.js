@@ -6,7 +6,8 @@ export function useSendMessage() {
   const [showModal, setShowModal] = useState();
   const emailSent = 'Message sent successfully!';
   const errorText = 'Oops! Something went wrong';
-  const URL = 'http://localhost:3000/send-email';
+  // const URL = 'http://localhost:3000/send-email';
+  const URL = 'https://guarded-dusk-71683-2cb27cae4823.herokuapp.com/send-email';
 
   const sendMessage = async (data) => {
     const { fullname, email, newMessage } = data;
@@ -24,7 +25,8 @@ export function useSendMessage() {
         }
         setShowModal(true);
       })
-      .catch(() => {
+      .catch((error) => {
+        console.log(error);
         setResponseText(errorText);
         setShowModal(true);
       });

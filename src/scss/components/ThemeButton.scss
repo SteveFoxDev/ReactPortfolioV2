@@ -1,3 +1,5 @@
+@use '../variables' as *;
+
 .theme {
   position: fixed;
   top: 30vh;
@@ -50,5 +52,6 @@
     transform-origin: center;
     transition: all 0.2s;
     border-radius: 50%; // Set to circle for shadow
+    box-shadow: 0 0 1rem #fff, 0 0 2rem #000;
   }
 }

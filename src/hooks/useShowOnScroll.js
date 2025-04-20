@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-// Threshold is the percentage of page height
+// Threshold is the percentage of page height in decimal format
 
 export function useShowOnScroll(threshold){
     const [showComponent, setShowComponent] = useState(false);
