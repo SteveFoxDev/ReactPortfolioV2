@@ -4,11 +4,31 @@
     position: relative;
     cursor: pointer;
 
+    &__img-container {
+        width: 100%;
+    }
+
     &__img {
         width: 100%;
         display: block;
         z-index: 0;
         transition: all .2s;
+    }
+
+    &__icon {
+        display: none;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: .5rem;
+        color: #fff;
+        background-color: #000;
+        border-radius: 50%;
+        font-size: 3rem;
+        animation: tap 1.5s infinite ease;
+        @media (pointer: coarse) {
+            display: block;
+        }
     }
 
     &:hover > &__overlay {
@@ -38,6 +58,14 @@
             color: $text-color-subtext;
             font-size: $font-size-xs;
             text-align: center;
+        }
+        &--icon {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: .5rem;
+        color: #fff;
+        font-size: 3rem;
         }
     }
 

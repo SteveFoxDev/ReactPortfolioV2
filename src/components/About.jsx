@@ -15,7 +15,7 @@ const About = () => {
         <p className='info__paragraph'>When I&apos;m not writing code I like woodworking, gardening, sewing, going to the gym and trying to play guitar! No matter what I am doing, I try to make it fun and get others to laugh... or at least smile!</p>
       </div>
       <div className='info__img--box'>
-        <img className='info__img' src='/img/profile.jpg' alt='' />
+        <img className='info__img' src='/img/me.jpg' alt='' />
       </div>
     </Section>
   );
