@@ -1,5 +1,5 @@
 import Button from './Button';
-import '../scss/components/hero.scss';
+import '../scss/components/Hero.scss';
 
 const Hero = () => {
   return (

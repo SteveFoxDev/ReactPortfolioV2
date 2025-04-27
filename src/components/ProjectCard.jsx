@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { GiClick } from "react-icons/gi";
 import { MdOutlineAdsClick } from "react-icons/md";
 import Modal from './Modal';
 import ProjectModal from './ProjectModal';
