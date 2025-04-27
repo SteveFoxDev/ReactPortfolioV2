@@ -1,6 +1,6 @@
 import { FaLinkedin, FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import Section from './Section';
-import ContactForm from './contactForm';
+import ContactForm from './ContactForm';
 import '../scss/components/Contact.scss';
 
 const Contact = () => {
