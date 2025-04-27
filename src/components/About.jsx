@@ -9,13 +9,10 @@ const About = () => {
           Hi, I&apos;m <span className='info__name'>Steve Fox</span>
         </h3>
         <p className='info__paragraph'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-          vitae sapiente consequuntur, aliquam a aut voluptatibus! Quam vel,
-          odit sint rerum ut asperiores repudiandae aliquid iusto est nesciunt
-          sapiente soluta aliquam accusantium dignissimos ullam, harum ad odio
-          itaque adipisci architecto, iste error cupiditate? Sit esse, error
-          possimus quo ab porro!
+        I really enjoy building web applications! Whether it is front-end, back-end, or anywhere in between I love it! I am driven by two impulses, the first is creativity, who doesn&apos;t love to create? The other is curiosity, for as long as I can remember I have had a natural desire to learn how &apos;things&apos; work. 
         </p>
+        <p className='info__paragraph'>During my first college programming course in JAVA, I found that programming satisfied both of those desires. Not knowing at the time that JavaScript was not related to Java, I enrolled in a JavaScript course and I am glad I did! Since then, I have developed skills in HTML, CSS, JavaScript, ReactJS, NodeJS, Express, MongoDB, MySQL and more.</p>
+        <p className='info__paragraph'>When I&apos;m not writing code I like woodworking, gardening, sewing, going to the gym and trying to play guitar! No matter what I am doing, I try to make it fun and get others to laugh... or at least smile!</p>
       </div>
       <div className='info__img--box'>
         <img className='info__img' src='/img/profile.jpg' alt='' />

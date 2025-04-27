@@ -7,7 +7,7 @@ const CollapsedNav = () => {
 
   const handleChange = (event) => {
     setIsChecked(event.target.checked);
-  };
+  }; 
 
   const closeSidebar = () => {
     setIsChecked(false);

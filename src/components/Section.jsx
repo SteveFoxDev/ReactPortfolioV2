@@ -8,7 +8,7 @@ const Section = ({ id, title, children }) => {
 
   const animateSection = inView ? 'animate' : '';
 
-
+ 
   return (
     <section className={`section section-${id}`} id={id}>
       <div ref={ref} className={`section__container section__container--${id}  section__container--${animateSection}`}>

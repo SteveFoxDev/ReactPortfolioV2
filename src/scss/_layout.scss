@@ -68,11 +68,12 @@
         &--about {
             display: grid;
             // grid-template-columns: .7fr .3fr;
-            grid-template-columns: repeat(2, minmax(min-content, max-content));
+            // grid-template-columns: repeat(2, minmax(min-content, max-content));
+            grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
             gap: 2rem;
-            @media only screen and (max-width: $breakpoint-sm) {
-                grid-template-columns: 1fr;
-            }
+            // @media only screen and (max-width: $breakpoint-sm) {
+            //     grid-template-columns: 1fr;
+            // }
         } 
 
         &--projects {
