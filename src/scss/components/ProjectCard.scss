@@ -31,9 +31,12 @@
         }
     }
 
-    &:hover > &__overlay {
-        opacity: 1;
-        visibility: visible;
+    //Only show overlay if NOT on touchscreen
+    @media (pointer: fine) {
+        &:hover > &__overlay {
+            opacity: 1;
+            visibility: visible;
+        }
     }
 
     &__overlay {
@@ -68,11 +71,10 @@
         font-size: 3rem;
         }
     }
-
-    &__overlay:hover ~ &__img {
-        filter: blur(3px) brightness(80%);
-        transform: scale(.95);
-    }
-
-   
+    
+        &__overlay:hover ~ &__img {
+            filter: blur(3px) brightness(80%);
+            transform: scale(.95);
+        }
+    
 }
